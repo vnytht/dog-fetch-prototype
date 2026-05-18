@@ -4,10 +4,6 @@ import { SPRITE_CONFIG } from './config';
 import { AnimationState, Direction, Position } from './types';
 import { useDogState } from './useDogState';
 
-function isTouchDevice(): boolean {
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-}
-
 function getScaledSpriteSize(): { width: number; height: number } {
   const {
     frameWidth,
@@ -92,11 +88,8 @@ export function DogFollower({
   );
   const displayedAnimation = animationOverride ?? animation;
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [isTouch, setIsTouch] = useState(false);
-
   useEffect(() => {
     setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    setIsTouch(isTouchDevice());
   }, []);
 
   const keyframeStyles = useMemo(() => {
@@ -136,7 +129,7 @@ export function DogFollower({
     onDogUpdate?.(position, direction);
   }, [direction, onDogUpdate, position]);
 
-  if (reducedMotion || isTouch || !isVisible) {
+  if (reducedMotion || !isVisible) {
     return null;
   }
 
