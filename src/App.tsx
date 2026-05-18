@@ -767,7 +767,7 @@ export function App() {
   const isBallMoving = ballState.z > 0 || Math.abs(ballState.vz) > 0.01;
 
   return (
-    <main className="stage" aria-label="Mello dog follower demo">
+    <main className="stage" aria-label="Bruce dog fetch demo">
       {aimPoint && (
         <ThrowAim
           start={throwStartRef.current}
