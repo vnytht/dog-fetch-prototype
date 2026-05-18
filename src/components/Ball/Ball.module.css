@@ -1,0 +1,55 @@
+.ball {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  z-index: 9998;
+  background-image: url('/sprites/tennis-ball.png');
+  background-repeat: no-repeat;
+  background-size: 168px 28px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-position: 0 0;
+}
+
+.moving {
+  animation: ball-idle 0.7s steps(6) infinite;
+}
+
+.shadow {
+  position: fixed;
+  width: 25px;
+  height: 9px;
+  z-index: 9997;
+  pointer-events: none;
+  border-radius: 999px;
+  background: rgba(78, 45, 12, 0.7);
+  filter: blur(1px);
+}
+
+.interactive {
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.interactive:hover {
+  filter: drop-shadow(0 2px 0 rgba(55, 35, 12, 0.22)) brightness(1.08);
+}
+
+.aiming {
+  cursor: grabbing;
+  filter: drop-shadow(0 2px 0 rgba(55, 35, 12, 0.28));
+}
+
+.locked {
+  pointer-events: none;
+}
+
+@keyframes ball-idle {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -168px 0;
+  }
+}

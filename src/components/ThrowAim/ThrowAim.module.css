@@ -1,0 +1,20 @@
+.aimLayer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.pullLine {
+  stroke: rgba(72, 45, 14, 0.68);
+  stroke-linecap: round;
+}
+
+.throwLine {
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 0 rgba(72, 45, 14, 0.32));
+}

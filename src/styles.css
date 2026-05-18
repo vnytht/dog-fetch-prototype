@@ -1,0 +1,23 @@
+:root {
+  background: #f2c575;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.stage {
+  min-height: 100dvh;
+  background-color: #f2c575;
+  background-image: url('/90s Pixelated Beach Scene (13).png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
